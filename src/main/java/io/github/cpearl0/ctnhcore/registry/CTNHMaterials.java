@@ -15,6 +15,7 @@ import com.gregtechceu.gtceu.api.data.chemical.material.registry.MaterialRegistr
 import com.gregtechceu.gtceu.api.data.tag.TagPrefix;
 import com.gregtechceu.gtceu.api.fluids.FluidBuilder;
 import com.gregtechceu.gtceu.api.fluids.store.FluidStorageKeys;
+import com.gregtechceu.gtceu.common.data.GTElements;
 import com.gregtechceu.gtceu.common.data.GTMaterials;
 import com.gregtechceu.gtceu.utils.memoization.GTMemoizer;
 import earth.terrarium.adastra.common.registry.ModBlocks;
@@ -264,6 +265,21 @@ public class CTNHMaterials {
             .iconSet(METALLIC)
             .flags(GENERATE_FINE_WIRE, DISABLE_DECOMPOSITION)
             .cableProperties(GTValues.V[GTValues.UHV], 4, 64)
+            .buildAndRegister();
+    public static final Material ULTRA_MANA = REGISTRATE.material(GTCEu.id("ultra_mana"))
+            .cnlang("究极魔力")
+            .ingot()
+            .blastTemp(7200, HIGHEST, 122222, 1000)
+            .element(GTElements.get("mana_ultra"))
+            .color(0x4ac6e6)
+            .iconSet(METALLIC)
+            .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_GEAR, GENERATE_SMALL_GEAR, GENERATE_BOLT_SCREW, GENERATE_FOIL, GENERATE_FRAME, GENERATE_RING)
+            .cableProperties(GTValues.V[GTValues.ZPM], 8, 1, false)
+            .buildAndRegister();
+    public static final Material MANA_STABLE_COOLDOWN = REGISTRATE.material(GTCEu.id("mana_stable_cooldown"))
+            .cnlang("魔力稳定剂")
+            .liquid()
+            .color(0x28358A)
             .buildAndRegister();
     public static  final Material COMPRESSED_ADAMANTITE= REGISTRATE.material(GTCEu.id("compressed_adamantite"))
             .cnlang("压缩精金")
