@@ -281,6 +281,12 @@ public class CTNHMaterials {
             .liquid()
             .color(0x28358A)
             .buildAndRegister();
+    public static final Material ELF_FUEL = REGISTRATE.material(GTCEu.id("elf_fuel"))
+            .cnlang("精灵稳定燃料")
+            .liquid()
+            .color(0x28358A)
+            .buildAndRegister()
+            .setFormula("ArNeC2O4Ma", true);
     public static  final Material COMPRESSED_ADAMANTITE= REGISTRATE.material(GTCEu.id("compressed_adamantite"))
             .cnlang("压缩精金")
             .plasma()

@@ -3,6 +3,7 @@ package io.github.cpearl0.ctnhcore.data.recipe.mana;
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.data.chemical.ChemicalHelper;
 import com.gregtechceu.gtceu.api.data.tag.TagPrefix;
+import com.gregtechceu.gtceu.api.machine.multiblock.CleanroomType;
 import com.gregtechceu.gtceu.common.data.GTItems;
 import com.gregtechceu.gtceu.common.data.GTMaterials;
 import com.gregtechceu.gtceu.common.data.GTRecipeTypes;
@@ -78,7 +79,7 @@ public class ManaCircuitRecipes {
                 .inputItems(CTNHItems.MANA_WAFER, 2)
                 .inputFluids(CTNHMaterials.Mana, 200)
                 .outputItems(CTNHItems.MANA_SOC, 6)
-                .EUt(7680)
+                .EUt(GTValues.VA[GTValues.IV])
                 .duration(400)
                 .save(provider);
 
@@ -86,25 +87,8 @@ public class ManaCircuitRecipes {
                 .inputItems(CTNHItems.ZENITH_WAFER)
                 .inputFluids(CTNHMaterials.Mana, 1000)
                 .outputItems(CTNHItems.ZENITH_SOC, 6)
-                .EUt(7680)
+                .EUt(GTValues.VA[GTValues.IV])
                 .duration(800)
-                .save(provider);
-
-        PHASE_INVERSION.recipeBuilder("mana_soc_inverse")
-                .inputItems(CTNHItems.MANA_SOC)
-                .inputFluids(CTNHMaterials.Zenith_essence, 400)
-                .outputItems(CTNHItems.MANA_WAFER)
-                .EUt(480)
-                .duration(2000)
-                .save(provider);
-
-        PHASE_INVERSION.recipeBuilder("zenith_soc_inverse")
-                .inputItems(CTNHItems.ZENITH_SOC)
-                .inputItems(GTItems.SYSTEM_ON_CHIP_WAFER)
-                .inputFluids(CTNHMaterials.Zenith_essence, 400)
-                .outputItems(CTNHItems.ZENITH_WAFER)
-                .EUt(480)
-                .duration(4000)
                 .save(provider);
 
         HELLFORGE.recipeBuilder("demon")
@@ -114,6 +98,48 @@ public class ManaCircuitRecipes {
                 .addData("drain", 500)
                 .outputItems(CTNHItems.WILL_NANO_PROCESSOR_MAINFRAME)
                 .EUt(6666)
+                .duration(200)
+                .save(provider);
+
+        GTRecipeTypes.CHEMICAL_RECIPES.recipeBuilder("umlhpic_wafer")
+                .inputItems(GTItems.ULTRA_HIGH_POWER_INTEGRATED_CIRCUIT_WAFER,32)
+                .inputItems(CTNHItems.TWIST_RUNE)
+                .inputItems(ChemicalHelper.get(TagPrefix.dust, CTNHMaterials.ULTRA_MANA, 8))
+                .inputFluids(CTNHMaterials.Zenith_essence, 4000)
+                .inputFluids(CTNHMaterials.ELF_FUEL, 16000)
+                .outputItems(CTNHItems.UMLHPIC_WAFER,16)
+                .EUt(32840)
+                .duration(2000)
+                .save(provider);
+
+        GTRecipeTypes.CUTTER_RECIPES.recipeBuilder("umlhpic_chip")
+                .inputItems(CTNHItems.UMLHPIC_WAFER)
+                .inputFluids(CTNHMaterials.Mana, 4000)
+                .outputItems(CTNHItems.UMLHPIC_CHIP,3)
+                .EUt(12222)
+                .duration(900)
+                .save(provider);
+
+        GTRecipeTypes.CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder("magic_quantum_processor_mainframe")
+                .cleanroom(CleanroomType.CLEANROOM)
+                .inputItems(GTItems.QUANTUM_MAINFRAME_ZPM)
+                .inputItems(CTNHItems.UMLHPIC_CHIP,4)
+                .inputItems(CTNHItems.MANA_CIRCUIT_BOARD)
+                .inputItems(ChemicalHelper.get(TagPrefix.frameGt, CTNHMaterials.ULTRA_MANA, 2))
+                .outputItems(CTNHItems.MAGIC_QUANTUM_PROCESSOR_MAINFRAME)
+                .EUt(32840)
+                .duration(400)
+                .save(provider);
+
+        GTRecipeTypes.CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder("magic_quantum_processor_mainframe2")
+                .cleanroom(CleanroomType.CLEANROOM)
+                .inputItems(GTItems.CRYSTAL_COMPUTER_ZPM)
+                .inputItems(GTItems.QUBIT_CENTRAL_PROCESSING_UNIT,4)
+                .inputItems(CTNHItems.UMLHPIC_CHIP,4)
+                .inputItems(CTNHItems.MANA_CIRCUIT_BOARD)
+                .inputItems(ChemicalHelper.get(TagPrefix.frameGt, CTNHMaterials.ULTRA_MANA, 2))
+                .outputItems(CTNHItems.MAGIC_QUANTUM_PROCESSOR_MAINFRAME)
+                .EUt(32840)
                 .duration(200)
                 .save(provider);
     }
