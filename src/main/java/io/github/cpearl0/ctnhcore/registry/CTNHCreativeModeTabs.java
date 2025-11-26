@@ -22,6 +22,12 @@ public class CTNHCreativeModeTabs {
                             .title(REGISTRATE.addLang("itemGroup", CTNHCore.id("item"), "CTNH Items"))
                             .build())
             .register();
+    public static RegistryEntry<CreativeModeTab> MANAITEM = REGISTRATE.defaultCreativeTab("mana_item",
+                    builder -> builder.displayItems(new GTCreativeModeTabs.RegistrateDisplayItemsGenerator("mana_item", REGISTRATE))
+                            .icon(CTNHManaItems.MANA_ELECTRONIC_CIRCUIT::asStack)
+                            .title(REGISTRATE.addLang("itemGroup", CTNHCore.id("mana_item"), "CTNH Mana Items"))
+                            .build())
+            .register();
     public static RegistryEntry<CreativeModeTab> BLOCK = REGISTRATE.defaultCreativeTab("block",
                     builder -> builder.displayItems(new GTCreativeModeTabs.RegistrateDisplayItemsGenerator("block", REGISTRATE))
                             .icon(CTNHBlocks.CASING_REFLECT_LIGHT::asStack)

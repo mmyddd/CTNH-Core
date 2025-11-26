@@ -12,6 +12,7 @@ import com.gregtechceu.gtceu.api.recipe.condition.RecipeConditionType;
 import com.gregtechceu.gtceu.data.tags.BiomeTagsLoader;
 import io.github.cpearl0.ctnhcore.CTNHCore;
 import io.github.cpearl0.ctnhcore.api.data.material.CTNHPropertyKeys;
+import io.github.cpearl0.ctnhcore.data.materials.ManaMaterials;
 import io.github.cpearl0.ctnhcore.registry.*;
 import io.github.cpearl0.ctnhcore.registry.sound.CTNHSoundDefinitionsProvider;
 import io.github.cpearl0.ctnhcore.registry.worldgen.*;

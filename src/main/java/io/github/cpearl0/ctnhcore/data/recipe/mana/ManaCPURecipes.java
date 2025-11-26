@@ -9,10 +9,7 @@ import com.gregtechceu.gtceu.common.data.GTMaterials;
 import com.gregtechceu.gtceu.common.data.GTRecipeTypes;
 import fr.lucreeper74.createmetallurgy.data.recipes.CMRecipeProvider;
 import fr.lucreeper74.createmetallurgy.registries.CMRecipeTypes;
-import io.github.cpearl0.ctnhcore.registry.CTNHBlocks;
-import io.github.cpearl0.ctnhcore.registry.CTNHFluidVeins;
-import io.github.cpearl0.ctnhcore.registry.CTNHItems;
-import io.github.cpearl0.ctnhcore.registry.CTNHMaterials;
+import io.github.cpearl0.ctnhcore.registry.*;
 import net.minecraft.data.recipes.FinishedRecipe;
 import tech.vixhentx.mcmod.ctnhlib.registrate.builders.CTNHMaterial;
 import tech.vixhentx.mcmod.ctnhlib.registrate.builders.CTNHRecipeType;
@@ -29,7 +26,7 @@ public class ManaCPURecipes {
         GTRecipeTypes.LASER_ENGRAVER_RECIPES.recipeBuilder("mana_cpu_wafer_silicon")
                 .inputItems(GTItems.SILICON_WAFER)
                 .notConsumable(BotaniaItems.lensNormal)
-                .outputItems(CTNHItems.MANA_CPU_WAFER)
+                .outputItems(CTNHManaItems.MANA_CPU_WAFER)
                 .duration(900)
                 .EUt(48)
                 .save(provider);
@@ -38,7 +35,7 @@ public class ManaCPURecipes {
                 .cleanroom(CleanroomType.CLEANROOM)
                 .inputItems(GTItems.PHOSPHORUS_WAFER)
                 .notConsumable(BotaniaItems.lensNormal)
-                .outputItems(CTNHItems.MANA_CPU_WAFER,4)
+                .outputItems(CTNHManaItems.MANA_CPU_WAFER,4)
                 .duration(500)
                 .EUt(48)
                 .save(provider);
@@ -47,7 +44,7 @@ public class ManaCPURecipes {
                 .cleanroom(CleanroomType.CLEANROOM)
                 .inputItems(GTItems.NAQUADAH_WAFER)
                 .notConsumable(BotaniaItems.lensNormal)
-                .outputItems(CTNHItems.MANA_CPU_WAFER,8)
+                .outputItems(CTNHManaItems.MANA_CPU_WAFER,8)
                 .duration(200)
                 .EUt(GTValues.VA[GTValues.MV])
                 .save(provider);
@@ -56,7 +53,7 @@ public class ManaCPURecipes {
                 .cleanroom(CleanroomType.CLEANROOM)
                 .inputItems(GTItems.NEUTRONIUM_WAFER)
                 .notConsumable(BotaniaItems.lensNormal)
-                .outputItems(CTNHItems.MANA_CPU_WAFER,16)
+                .outputItems(CTNHManaItems.MANA_CPU_WAFER,16)
                 .duration(50)
                 .EUt(180)
                 .save(provider);
@@ -65,7 +62,7 @@ public class ManaCPURecipes {
                 .cleanroom(CleanroomType.CLEANROOM)
                 .inputItems(GTItems.SILICON_WAFER)
                 .notConsumable(BotaniaItems.lensNormal)
-                .outputItems(CTNHItems.MANA_CPU_WAFER)
+                .outputItems(CTNHManaItems.MANA_CPU_WAFER)
                 .duration(900)
                 .EUt(48)
                 .save(provider);
@@ -74,7 +71,7 @@ public class ManaCPURecipes {
         GTRecipeTypes.LASER_ENGRAVER_RECIPES.recipeBuilder("elementium_cpu_wafer_silicon")
                 .inputItems(GTItems.SILICON_WAFER)
                 .notConsumable(BotaniaItems.lensFlare)
-                .outputItems(CTNHItems.ELEMENTIUM_CPU_WAFER)
+                .outputItems(CTNHManaItems.ELEMENTIUM_CPU_WAFER)
                 .duration(900)
                 .EUt(GTValues.VA[GTValues.HV])
                 .save(provider);
@@ -83,7 +80,7 @@ public class ManaCPURecipes {
                 .cleanroom(CleanroomType.CLEANROOM)
                 .inputItems(GTItems.PHOSPHORUS_WAFER)
                 .notConsumable(BotaniaItems.lensFlare)
-                .outputItems(CTNHItems.ELEMENTIUM_CPU_WAFER,4)
+                .outputItems(CTNHManaItems.ELEMENTIUM_CPU_WAFER,4)
                 .duration(500)
                 .EUt(GTValues.VA[GTValues.MV])
                 .save(provider);
@@ -92,7 +89,7 @@ public class ManaCPURecipes {
                 .cleanroom(CleanroomType.CLEANROOM)
                 .inputItems(GTItems.NAQUADAH_WAFER)
                 .notConsumable(BotaniaItems.lensFlare)
-                .outputItems(CTNHItems.ELEMENTIUM_CPU_WAFER,8)
+                .outputItems(CTNHManaItems.ELEMENTIUM_CPU_WAFER,8)
                 .duration(200)
                 .EUt(180)
                 .save(provider);
@@ -101,7 +98,7 @@ public class ManaCPURecipes {
                 .cleanroom(CleanroomType.CLEANROOM)
                 .inputItems(GTItems.NEUTRONIUM_WAFER)
                 .notConsumable(BotaniaItems.lensFlare)
-                .outputItems(CTNHItems.ELEMENTIUM_CPU_WAFER,16)
+                .outputItems(CTNHManaItems.ELEMENTIUM_CPU_WAFER,16)
                 .duration(50)
                 .EUt(48)
                 .save(provider);
@@ -110,25 +107,25 @@ public class ManaCPURecipes {
                 .cleanroom(CleanroomType.CLEANROOM)
                 .inputItems(GTItems.SILICON_WAFER)
                 .notConsumable(BotaniaItems.lensFlare)
-                .outputItems(CTNHItems.ELEMENTIUM_CPU_WAFER)
+                .outputItems(CTNHManaItems.ELEMENTIUM_CPU_WAFER)
                 .duration(900)
                 .EUt(48)
                 .save(provider);
 
         //魔力CPU芯片
         GTRecipeTypes.CUTTER_RECIPES.recipeBuilder("mana_cpu_wafer_cut")
-                .inputItems(CTNHItems.MANA_CPU_WAFER)
+                .inputItems(CTNHManaItems.MANA_CPU_WAFER)
                 .inputFluids(CTNHMaterials.Mana, 1000)
-                .outputItems(CTNHItems.MANA_CPU_CHIP,8)
+                .outputItems(CTNHManaItems.MANA_CPU_CHIP,8)
                 .duration(900)
                 .EUt(48)
                 .save(provider);
 
         //魔力CPU芯片
         GTRecipeTypes.CUTTER_RECIPES.recipeBuilder("elementium_cpu_wafer_cut")
-                .inputItems(CTNHItems.ELEMENTIUM_CPU_WAFER)
+                .inputItems(CTNHManaItems.ELEMENTIUM_CPU_WAFER)
                 .inputFluids(CTNHMaterials.Mana, 16000)
-                .outputItems(CTNHItems.ELEMENTIUM_CPU_CHIP,8)
+                .outputItems(CTNHManaItems.ELEMENTIUM_CPU_CHIP,8)
                 .duration(900)
                 .EUt(48)
                 .save(provider);

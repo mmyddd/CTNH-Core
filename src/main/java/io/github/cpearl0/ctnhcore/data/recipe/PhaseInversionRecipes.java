@@ -8,10 +8,7 @@ import com.gregtechceu.gtceu.common.data.GTMaterials;
 import com.gregtechceu.gtceu.common.data.GTRecipeTypes;
 import fr.lucreeper74.createmetallurgy.data.recipes.CMRecipeProvider;
 import fr.lucreeper74.createmetallurgy.registries.CMRecipeTypes;
-import io.github.cpearl0.ctnhcore.registry.CTNHBlocks;
-import io.github.cpearl0.ctnhcore.registry.CTNHFluidVeins;
-import io.github.cpearl0.ctnhcore.registry.CTNHItems;
-import io.github.cpearl0.ctnhcore.registry.CTNHMaterials;
+import io.github.cpearl0.ctnhcore.registry.*;
 import net.minecraft.data.recipes.FinishedRecipe;
 import tech.vixhentx.mcmod.ctnhlib.registrate.builders.CTNHMaterial;
 import tech.vixhentx.mcmod.ctnhlib.registrate.builders.CTNHRecipeType;
@@ -23,18 +20,18 @@ import static io.github.cpearl0.ctnhcore.registry.CTNHRecipeTypes.*;
 public class PhaseInversionRecipes {
     public static void init(Consumer<FinishedRecipe> provider) {
         PHASE_INVERSION.recipeBuilder("mana_soc_inverse")
-                .inputItems(CTNHItems.MANA_SOC)
+                .inputItems(CTNHManaItems.MANA_SOC)
                 .inputFluids(CTNHMaterials.Zenith_essence, 400)
-                .outputItems(CTNHItems.MANA_WAFER)
+                .outputItems(CTNHManaItems.MANA_WAFER)
                 .EUt(480)
                 .duration(2000)
                 .save(provider);
 
         PHASE_INVERSION.recipeBuilder("zenith_soc_inverse")
-                .inputItems(CTNHItems.ZENITH_SOC)
+                .inputItems(CTNHManaItems.ZENITH_SOC)
                 .inputItems(GTItems.SYSTEM_ON_CHIP_WAFER)
                 .inputFluids(CTNHMaterials.Zenith_essence, 400)
-                .outputItems(CTNHItems.ZENITH_WAFER)
+                .outputItems(CTNHManaItems.ZENITH_WAFER)
                 .EUt(480)
                 .duration(4000)
                 .save(provider);

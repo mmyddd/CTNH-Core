@@ -40,4 +40,5 @@ public class CTNHElements {
     public static final Element Ds = GTElements.createAndRegister(150, 144, -1, null, "Desh", "Ds", false);
     public static final Element Ot = GTElements.createAndRegister(151, 156, -1, null, "Ostrum", "Os", false);
     public static final Element Ct = GTElements.createAndRegister(152, 162, -1, null, "Calorite", "Ct", false);
+    public static final Element ULTRA_MANA = GTElements.createAndRegister(777, 777, -1, null, "ultra_mana", "**Ma**", false);
 }
