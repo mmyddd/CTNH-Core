@@ -15,9 +15,7 @@ import com.gregtechceu.gtceu.api.data.chemical.material.registry.MaterialRegistr
 import com.gregtechceu.gtceu.api.data.tag.TagPrefix;
 import com.gregtechceu.gtceu.api.fluids.FluidBuilder;
 import com.gregtechceu.gtceu.api.fluids.store.FluidStorageKeys;
-import com.gregtechceu.gtceu.common.data.GTElements;
 import com.gregtechceu.gtceu.common.data.GTMaterials;
-import com.gregtechceu.gtceu.utils.memoization.GTMemoizer;
 import earth.terrarium.adastra.common.registry.ModBlocks;
 import io.github.cpearl0.ctnhcore.CTNHCore;
 import io.github.cpearl0.ctnhcore.data.materials.*;
@@ -28,9 +26,6 @@ import teamrazor.deepaether.init.DABlocks;
 import teamrazor.deepaether.init.DAItems;
 import vazkii.botania.common.block.BotaniaBlocks;
 import vazkii.botania.common.item.BotaniaItems;
-
-import java.util.Arrays;
-import java.util.function.Supplier;
 
 import static com.gregtechceu.gtceu.api.GTValues.*;
 import static com.gregtechceu.gtceu.api.data.chemical.material.info.MaterialFlags.*;
@@ -43,7 +38,6 @@ import static io.github.cpearl0.ctnhcore.registry.CTNHRegistration.REGISTRATE;
 import static io.github.cpearl0.ctnhcore.registry.CTNHTagPrefixes.hyperRotor;
 import static committee.nova.mods.avaritia.init.registry.ModItems.*;
 import static committee.nova.mods.avaritia.init.registry.ModBlocks.*;
-import static wayoftime.bloodmagic.api.compat.EnumDemonWillType.CORROSIVE;
 
 public class CTNHMaterials {
     public static void addFluid(Material material) {
@@ -266,27 +260,6 @@ public class CTNHMaterials {
             .flags(GENERATE_FINE_WIRE, DISABLE_DECOMPOSITION)
             .cableProperties(GTValues.V[GTValues.UHV], 4, 64)
             .buildAndRegister();
-    public static final Material ULTRA_MANA = REGISTRATE.material(GTCEu.id("ultra_mana"))
-            .cnlang("究极魔力")
-            .ingot()
-            .blastTemp(7200, HIGHEST, 122222, 1000)
-            .element(GTElements.get("mana_ultra"))
-            .color(0x4ac6e6)
-            .iconSet(METALLIC)
-            .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_GEAR, GENERATE_SMALL_GEAR, GENERATE_BOLT_SCREW, GENERATE_FOIL, GENERATE_FRAME, GENERATE_RING)
-            .cableProperties(GTValues.V[GTValues.ZPM], 8, 1, false)
-            .buildAndRegister();
-    public static final Material MANA_STABLE_COOLDOWN = REGISTRATE.material(GTCEu.id("mana_stable_cooldown"))
-            .cnlang("魔力稳定剂")
-            .liquid()
-            .color(0x28358A)
-            .buildAndRegister();
-    public static final Material ELF_FUEL = REGISTRATE.material(GTCEu.id("elf_fuel"))
-            .cnlang("精灵稳定燃料")
-            .liquid()
-            .color(0x28358A)
-            .buildAndRegister()
-            .setFormula("ArNeC2O4Ma", true);
     public static  final Material COMPRESSED_ADAMANTITE= REGISTRATE.material(GTCEu.id("compressed_adamantite"))
             .cnlang("压缩精金")
             .plasma()
@@ -1020,6 +993,9 @@ public class CTNHMaterials {
     public static Material SodiumOsmateRuthenateChlorideSolution;
     public static Material Acetaldehyde;
     public static Material Seawater;
+    public static Material UltraMana;
+    public static Material ManaStableCooldown;
+    public static Material ElfFuel;
     public static void init() {
         NuclearMaterials.init();
         CreateMaterials.init();
@@ -1029,6 +1005,7 @@ public class CTNHMaterials {
         PlatinumLineMaterials.init();
         NaquadahMaterials.init();
         BrineChain.init();
+        ManaMaterials.init();
 
         OrdinaryMaterials.init();
         CombustibleIce.setFormula("(CH4)(H2O)", true);
