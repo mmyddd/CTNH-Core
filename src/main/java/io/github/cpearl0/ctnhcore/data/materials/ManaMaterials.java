@@ -35,5 +35,10 @@ public class ManaMaterials {
                 .color(0x28358A)
                 .buildAndRegister()
                 .setFormula("ArNeC2O4Ma", true);
+        ElfFuelActive = REGISTRATE.material(GTCEu.id("elf_active_fuel"))
+                .cnlang("精灵激发燃料")
+                .liquid()
+                .color(0x28358A)
+                .buildAndRegister();
     }
 }

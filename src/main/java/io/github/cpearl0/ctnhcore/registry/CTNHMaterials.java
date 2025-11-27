@@ -996,6 +996,7 @@ public class CTNHMaterials {
     public static Material UltraMana;
     public static Material ManaStableCooldown;
     public static Material ElfFuel;
+    public static Material ElfFuelActive;
     public static void init() {
         NuclearMaterials.init();
         CreateMaterials.init();
