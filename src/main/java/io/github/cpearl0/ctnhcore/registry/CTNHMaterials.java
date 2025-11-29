@@ -30,8 +30,7 @@ import vazkii.botania.common.item.BotaniaItems;
 import static com.gregtechceu.gtceu.api.GTValues.*;
 import static com.gregtechceu.gtceu.api.data.chemical.material.info.MaterialFlags.*;
 import static com.gregtechceu.gtceu.api.data.chemical.material.info.MaterialIconSet.*;
-import static com.gregtechceu.gtceu.api.data.chemical.material.properties.BlastProperty.GasTier.HIGHER;
-import static com.gregtechceu.gtceu.api.data.chemical.material.properties.BlastProperty.GasTier.HIGHEST;
+import static com.gregtechceu.gtceu.api.data.chemical.material.properties.BlastProperty.GasTier.*;
 import static com.gregtechceu.gtceu.common.data.GTMaterials.*;
 import static io.github.cpearl0.ctnhcore.registry.CTNHMaterialFlags.GENERATE_HYPER_ROTOR;
 import static io.github.cpearl0.ctnhcore.registry.CTNHRegistration.REGISTRATE;
@@ -864,6 +863,38 @@ public class CTNHMaterials {
             .components(Rhenium, 1, Sulfur, 2)
             .addOreByproducts(Molybdenum, Copper, Platinum)
             .buildAndRegister();
+    public static final Material Adamantite = REGISTRATE.material(GTCEu.id("adamantite"))
+            .cnlang("精金")
+            .ingot()
+            .liquid()
+            .dust()
+            .plasma()
+            .radioactiveHazard(3)
+            .rotorStats(500, 450, 10, 1000000)
+            .blastTemp(18900)
+            .cableProperties(GTValues.V[GTValues.UHV], 16, 1)
+            .color(0xFF2828)
+            .secondaryColor(0x8A2020)
+            .iconSet(METALLIC)
+            .flags(GENERATE_ROD, GENERATE_FRAME, GENERATE_PLATE, GENERATE_GEAR, GENERATE_BOLT_SCREW, GENERATE_FOIL, GENERATE_FOIL, GENERATE_FINE_WIRE, GENERATE_ROUND, GENERATE_LONG_ROD, GENERATE_BOLT_SCREW, GENERATE_FRAME, GENERATE_RING, GENERATE_SMALL_GEAR)
+            .buildAndRegister()
+            .setFormula("Ad", true);
+    public static final Material AdamantiteFluid = REGISTRATE.material(GTCEu.id("adamantiteliquid"))
+            .cnlang("精金溶液")
+            .liquid()
+            .color(0x125555)
+            .buildAndRegister()
+            .setFormula("P-507-Ad", true);
+    public static final Material TaraniumPowder = REGISTRATE.material(GTCEu.id("taranium_powder"))
+            .cnlang("塔兰")
+            .dust()
+            .ingot()
+            .liquid()
+            .color(0xFFFF33)
+            .blastTemp(16200)
+            .iconSet(METALLIC)
+            .flags(GENERATE_ROD, GENERATE_FRAME, GENERATE_PLATE, GENERATE_GEAR, GENERATE_BOLT_SCREW, GENERATE_FOIL)
+            .buildAndRegister();
 
     public static Material AndesiteAlloy;
     public static Material Desh;
@@ -993,10 +1024,38 @@ public class CTNHMaterials {
     public static Material SodiumOsmateRuthenateChlorideSolution;
     public static Material Acetaldehyde;
     public static Material Seawater;
+    //魔力
     public static Material UltraMana;
+    public static Material ManaPlus;
+    public static Material ManaSuperPlus;
     public static Material ManaStableCooldown;
     public static Material ElfFuel;
     public static Material ElfFuelActive;
+    public static Material LiquidAlfheimAir;
+    public static Material StarlightFuel;
+    public static Material StarlightFuelActive;
+    public static Material StarlightFuelExhausted;
+    public static Material BloodFuel;
+    public static Material BloodFuelActive;
+    public static Material BloodFuelExhausted;
+    public static Material ManaUpFuel;
+    public static Material ManaUpFuelActive;
+    public static Material ManaUpFuelExhausted;
+    public static Material StarFuel;
+    public static Material StarFuelActive;
+    public static Material StarFuelExhausted;
+    public static Material ManaRadiationMixture;
+    //EIO
+    public static Material EnergeticAlloy;
+    public static Material ConductiveAlloy;
+    public static Material VibrantAlloy;
+    public static Material DarkSteel;
+    public static Material EndSteel;
+    public static Material ChorusiteAlloy;
+    public static Material MelodicAlloy;
+    public static Material StellarAlloy;
+
+
     public static void init() {
         NuclearMaterials.init();
         CreateMaterials.init();
@@ -1007,6 +1066,7 @@ public class CTNHMaterials {
         NaquadahMaterials.init();
         BrineChain.init();
         ManaMaterials.init();
+        EnderIOMaterials.init();
 
         OrdinaryMaterials.init();
         CombustibleIce.setFormula("(CH4)(H2O)", true);
