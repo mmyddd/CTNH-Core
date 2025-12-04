@@ -1045,6 +1045,8 @@ public class CTNHMaterials {
     public static Material StarFuelActive;
     public static Material StarFuelExhausted;
     public static Material ManaRadiationMixture;
+    public static Material AgnFuelActive;
+    public static Material AgnFuel;
     //EIO
     public static Material EnergeticAlloy;
     public static Material ConductiveAlloy;

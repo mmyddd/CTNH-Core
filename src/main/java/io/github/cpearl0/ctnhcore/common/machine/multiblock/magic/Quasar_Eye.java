@@ -11,6 +11,7 @@ import com.gregtechceu.gtceu.api.recipe.content.ContentModifier;
 import com.gregtechceu.gtceu.api.recipe.modifier.ModifierFunction;
 import io.github.cpearl0.ctnhcore.common.machine.multiblock.MachineUtils;
 import io.github.cpearl0.ctnhcore.registry.CTNHItems;
+import io.github.cpearl0.ctnhcore.registry.CTNHManaItems;
 import io.github.cpearl0.ctnhcore.registry.CTNHMaterials;
 import io.github.cpearl0.ctnhcore.registry.CTNHRecipeTypes;
 import net.minecraft.nbt.CompoundTag;
@@ -57,19 +58,19 @@ public class Quasar_Eye extends WorkableElectricMultiblockMachine implements ITi
             if(recipe.data.getInt("active")>active) return false;
         }
 
-        if (MachineUtils.inputItem(CTNHItems.TWIST_RUNE.asStack(1),this )){
+        if (MachineUtils.inputItem(CTNHManaItems.TWIST_RUNE.asStack(1),this )){
             rune_energy+=32;
         }
-        if (MachineUtils.inputItem(CTNHItems.HORIZEN_RUNE.asStack(1),this )){
+        if (MachineUtils.inputItem(CTNHManaItems.HORIZEN_RUNE.asStack(1),this )){
             rune_energy+=32;
         }
-        if (MachineUtils.inputItem(CTNHItems.STARLIGHT_RUNE.asStack(1),this )){
+        if (MachineUtils.inputItem(CTNHManaItems.STARLIGHT_RUNE.asStack(1),this )){
             rune_energy+=32;
         }
-        if (MachineUtils.inputItem(CTNHItems.PROLIFERATION_RUNE.asStack(1),this )){
+        if (MachineUtils.inputItem(CTNHManaItems.PROLIFERATION_RUNE.asStack(1),this )){
             rune_energy+=16;
         }
-        if (MachineUtils.inputItem(CTNHItems.QUASAR_RUNE.asStack(1),this )){
+        if (MachineUtils.inputItem(CTNHManaItems.QUASAR_RUNE.asStack(1),this )){
             rune_energy+=512;
         }
         if(active<recipe.data.getInt("active"))

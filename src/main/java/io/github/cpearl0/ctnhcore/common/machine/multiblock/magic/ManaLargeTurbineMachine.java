@@ -31,6 +31,7 @@ import com.lowdragmc.lowdraglib.syncdata.annotation.Persisted;
 import com.lowdragmc.lowdraglib.syncdata.field.ManagedFieldHolder;
 import io.github.cpearl0.ctnhcore.common.machine.multiblock.MachineUtils;
 import io.github.cpearl0.ctnhcore.registry.CTNHItems;
+import io.github.cpearl0.ctnhcore.registry.CTNHManaItems;
 import io.github.cpearl0.ctnhcore.registry.CTNHMaterials;
 import lombok.Getter;
 import net.minecraft.ChatFormatting;
@@ -122,7 +123,7 @@ public class ManaLargeTurbineMachine extends WorkableElectricMultiblockMachine i
             turbineMachine.efficiency = 4;
             turbineMachine.consumpution_rate = 0.6;
         }
-        else if(turbineMachine.getMachineStorageItem().getItem().equals(CTNHItems.HORIZEN_RUNE.get())||turbineMachine.getMachineStorageItem().getItem().equals(CTNHItems.STARLIGHT_RUNE.get())||turbineMachine.getMachineStorageItem().getItem().equals(CTNHItems.TWIST_RUNE.get())||turbineMachine.getMachineStorageItem().getItem().equals(CTNHItems.PROLIFERATION_RUNE.get()))
+        else if(turbineMachine.getMachineStorageItem().getItem().equals(CTNHManaItems.HORIZEN_RUNE.get())||turbineMachine.getMachineStorageItem().getItem().equals(CTNHManaItems.STARLIGHT_RUNE.get())||turbineMachine.getMachineStorageItem().getItem().equals(CTNHManaItems.TWIST_RUNE.get())||turbineMachine.getMachineStorageItem().getItem().equals(CTNHManaItems.PROLIFERATION_RUNE.get()))
         {
             turbineMachine.efficiency = 5;
             turbineMachine.consumpution_rate = 0.3;
@@ -207,13 +208,13 @@ public class ManaLargeTurbineMachine extends WorkableElectricMultiblockMachine i
                     consumeItem();
                 }
             }
-            else if(getMachineStorageItem().getItem().equals(CTNHItems.HORIZEN_RUNE.get())||getMachineStorageItem().getItem().equals(CTNHItems.STARLIGHT_RUNE.get())||getMachineStorageItem().getItem().equals(CTNHItems.TWIST_RUNE.get())||getMachineStorageItem().getItem().equals(CTNHItems.PROLIFERATION_RUNE.get())) {
+            else if(getMachineStorageItem().getItem().equals(CTNHManaItems.HORIZEN_RUNE.get())||getMachineStorageItem().getItem().equals(CTNHManaItems.STARLIGHT_RUNE.get())||getMachineStorageItem().getItem().equals(CTNHManaItems.TWIST_RUNE.get())||getMachineStorageItem().getItem().equals(CTNHManaItems.PROLIFERATION_RUNE.get())) {
                 if(random<=0.01)
                 {
                     consumeItem();
                 }
             }
-            else if(getMachineStorageItem().getItem().equals(CTNHItems.QUASAR_RUNE.get()))
+            else if(getMachineStorageItem().getItem().equals(CTNHManaItems.QUASAR_RUNE.get()))
             {
                 doExplosion(3f);
                 return false;

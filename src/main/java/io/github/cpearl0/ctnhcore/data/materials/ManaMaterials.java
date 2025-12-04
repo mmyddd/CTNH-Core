@@ -131,5 +131,15 @@ public class ManaMaterials {
                 .color(0xFF14)
                 .buildAndRegister()
                 .setFormula("ThUPuRnNqMa??", true);
+        AgnFuelActive= REGISTRATE.material(GTCEu.id("agn_fuel_active"))
+                .liquid()
+                .color((0XFFA500))
+                .plasma()
+                .buildAndRegister();
+        AgnFuel= REGISTRATE.material(GTCEu.id("agn_fuel"))
+                .liquid()
+                .color((0XFFA500))
+                .plasma()
+                .buildAndRegister();
     }
 }

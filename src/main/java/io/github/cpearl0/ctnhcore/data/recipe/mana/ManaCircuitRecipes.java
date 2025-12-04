@@ -50,7 +50,7 @@ public class ManaCircuitRecipes {
                 .save(provider);
 
         MANAREACTOR.recipeBuilder("mana_circuit_board")
-                .inputItems(CTNHItems.STARLIGHT_RUNE)
+                .inputItems(CTNHManaItems.STARLIGHT_RUNE)
                 .inputItems(ChemicalHelper.get(TagPrefix.foil, CTNHMaterials.UltraMana, 64))
                 .inputItems(ChemicalHelper.get(TagPrefix.plate, GTMaterials.ReinforcedEpoxyResin, 32))
                 .inputFluids(CTNHMaterials.ManaStableCooldown, 16000)
@@ -96,7 +96,7 @@ public class ManaCircuitRecipes {
 
         GTRecipeTypes.CHEMICAL_RECIPES.recipeBuilder("umlhpic_wafer")
                 .inputItems(GTItems.ULTRA_HIGH_POWER_INTEGRATED_CIRCUIT_WAFER,32)
-                .inputItems(CTNHItems.TWIST_RUNE)
+                .inputItems(CTNHManaItems.TWIST_RUNE)
                 .inputItems(ChemicalHelper.get(TagPrefix.dust, CTNHMaterials.UltraMana, 8))
                 .inputFluids(CTNHMaterials.Zenith_essence, 4000)
                 .inputFluids(CTNHMaterials.ElfFuel, 16000)

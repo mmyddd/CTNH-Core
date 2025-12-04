@@ -102,6 +102,7 @@ public class CTNHCoreGTAddon implements IGTAddon {
         ManaCPURecipes.init(provider);
         ManaFuelRecipes.init(provider);
         ManaGeneratorRecipes.init(provider);
+        ManaBeamRecipes.init(provider);
         PhaseInversionRecipes.init(provider);
         WetwareCircuit.init(provider);
         //移植配方

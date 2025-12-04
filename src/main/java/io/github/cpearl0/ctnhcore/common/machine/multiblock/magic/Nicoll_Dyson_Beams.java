@@ -24,6 +24,7 @@ import com.lowdragmc.lowdraglib.syncdata.field.ManagedFieldHolder;
 import io.github.cpearl0.ctnhcore.common.machine.multiblock.MachineUtils;
 import io.github.cpearl0.ctnhcore.common.machine.multiblock.electric.FactoryMachine;
 import io.github.cpearl0.ctnhcore.registry.CTNHItems;
+import io.github.cpearl0.ctnhcore.registry.CTNHManaItems;
 import io.github.cpearl0.ctnhcore.registry.CTNHMaterials;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
@@ -98,19 +99,19 @@ public class Nicoll_Dyson_Beams extends WorkableElectricMultiblockMachine implem
         var random=Math.random();
         for(int i = 0; i < 4; i++)
         {
-            if(machineStorage.getStackInSlot(i).getItem().equals(CTNHItems.TWIST_RUNE.get()))
+            if(machineStorage.getStackInSlot(i).getItem().equals(CTNHManaItems.TWIST_RUNE.get()))
             {
                 if(random<=consume_twist())consumeItem(i);
             }
-            else if(machineStorage.getStackInSlot(i).getItem().equals(CTNHItems.STARLIGHT_RUNE.get()))
+            else if(machineStorage.getStackInSlot(i).getItem().equals(CTNHManaItems.STARLIGHT_RUNE.get()))
             {
                 if(random<=consume_starlight())consumeItem(i);
             }
-            else if(machineStorage.getStackInSlot(i).getItem().equals(CTNHItems.QUASAR_RUNE.get()))
+            else if(machineStorage.getStackInSlot(i).getItem().equals(CTNHManaItems.QUASAR_RUNE.get()))
             {
                 if(random<=0.00001)consumeItem(i);
             }
-            else if(machineStorage.getStackInSlot(i).getItem().equals(CTNHItems.HORIZEN_RUNE.get()))
+            else if(machineStorage.getStackInSlot(i).getItem().equals(CTNHManaItems.HORIZEN_RUNE.get()))
             {
                 if(random<=0.0025*(horizen_power))consumeItem(i);
             }

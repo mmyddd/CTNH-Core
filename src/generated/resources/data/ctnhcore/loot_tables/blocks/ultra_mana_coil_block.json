@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "ctnhcore:ulta_mana_coil_block"
+          "name": "ctnhcore:ultra_mana_coil_block"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "ctnhcore:blocks/ulta_mana_coil_block"
+  "random_sequence": "ctnhcore:blocks/ultra_mana_coil_block"
 }

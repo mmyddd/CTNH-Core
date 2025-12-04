@@ -14,6 +14,7 @@ import com.gregtechceu.gtceu.common.data.GTRecipeTypes;
 import com.lowdragmc.lowdraglib.syncdata.annotation.Persisted;
 import io.github.cpearl0.ctnhcore.common.machine.multiblock.MachineUtils;
 import io.github.cpearl0.ctnhcore.registry.CTNHItems;
+import io.github.cpearl0.ctnhcore.registry.CTNHManaItems;
 import io.github.cpearl0.ctnhcore.registry.CTNHMaterials;
 import io.github.cpearl0.ctnhcore.registry.CTNHRecipeModifiers;
 import net.minecraft.world.item.ItemStack;
@@ -75,7 +76,7 @@ public class ManaMachine extends WorkableElectricMultiblockMachine implements IT
                 }
             }
 
-            if(MachineUtils.canInputItem(new ItemStack(CTNHItems.QUASAR_RUNE),mmachine))
+            if(MachineUtils.canInputItem(new ItemStack(CTNHManaItems.QUASAR_RUNE),mmachine))
             {
                 mmachine.power=100;
             }

@@ -35,7 +35,56 @@ public class CTNHManaItems {
     @CN("§b魔力逻辑UV电路板§r")
     @EN("§bMagic Logic UV Circuit Board§r")
     static Lang magic_quantum_processor_mainframe;
+    @CN("宛如天上的繁星")
+    @EN("Like stars in the sky")
+    static Lang zenith_star;
     public static void registerItem() {
+        HORIZEN_RUNE = REGISTRATE
+                .item("horizen_rune",ComponentItem::create)
+                .cnlang("§5视域§r符文")
+                .lang("§5Horizen§r Rune")
+                .tag(BotaniaTags.Items.RUNES,CTNHTags.TIER5_RUNES)
+                .onRegister(attach(new TooltipBehavior(list -> {
+                    list.add(Component.translatable("ctnh.item.runes.horizen_rune").withStyle(ChatFormatting.DARK_PURPLE));
+                })))
+                .register();
+        STARLIGHT_RUNE = REGISTRATE
+                .item("starlight_rune",ComponentItem::create)
+                .cnlang("§9星光§r符文")
+                .lang("§9Starlight§r Rune")
+                .tag(BotaniaTags.Items.RUNES,CTNHTags.TIER5_RUNES)
+                .onRegister(attach(new TooltipBehavior(list -> {
+                    list.add(Component.translatable("ctnh.item.runes.starlight_rune").withStyle(ChatFormatting.BLUE));
+                })))
+                .register();
+        TWIST_RUNE = REGISTRATE
+                .item("twist_rune",ComponentItem::create)
+                .cnlang("§c扭曲§r符文")
+                .lang("§cTwist§r Rune")
+                .tag(BotaniaTags.Items.RUNES,CTNHTags.TIER5_RUNES)
+                .onRegister(attach(new TooltipBehavior(list -> {
+                    list.add(Component.translatable("ctnh.item.runes.twist_rune").withStyle(ChatFormatting.RED));
+                })))
+                .register();
+        QUASAR_RUNE = REGISTRATE
+                .item("quasar_rune",ComponentItem::create)
+                .cnlang("§k类星体§r符文")
+                .lang("§kQuasar§r Rune")
+                .tag(BotaniaTags.Items.RUNES,CTNHTags.TIER5_RUNES)
+                .onRegister(attach(new TooltipBehavior(list -> {
+                    list.add(Component.translatable("ctnh.item.runes.quasar_rune").withStyle(ChatFormatting.LIGHT_PURPLE));
+                })))
+                .register();
+        PROLIFERATION_RUNE = REGISTRATE
+                .item("proliferation_rune",ComponentItem::create)
+                .cnlang("§a增殖§r符文")
+                .lang("§aProliferation§r Rune")
+                .tag(BotaniaTags.Items.RUNES,CTNHTags.TIER5_RUNES)
+                .onRegister(attach(new TooltipBehavior(list -> {
+                    list.add(Component.translatable("ctnh.item.runes.proliferation_rune").withStyle(ChatFormatting.GREEN));
+                })))
+                .register();
+
         MANA_CIRCUIT_BOARD = REGISTRATE
                 .item("mana_circuit_board", ComponentItem::create)
                 .cnlang("究极魔力电路基板")
@@ -72,11 +121,27 @@ public class CTNHManaItems {
                         text.add(magic_quantum_processor_mainframe.translate())
                 )))
                 .register();
+
+        ZENITH_STAR = REGISTRATE
+                .item("zenith_star", ComponentItem::create)
+                .cnlang("天穹之星")
+                .lang("Zenith Star")
+                .onRegister(attach(new TooltipBehavior(text ->
+                        text.add(zenith_star.translate())
+                )))
+                .register();
     }
+    public static ItemEntry<ComponentItem> HORIZEN_RUNE;
+    public static ItemEntry<ComponentItem> STARLIGHT_RUNE;
+    public static ItemEntry<ComponentItem> TWIST_RUNE;
+    public static ItemEntry<ComponentItem> QUASAR_RUNE;
+    public static ItemEntry<ComponentItem> PROLIFERATION_RUNE;
+
     public static ItemEntry<ComponentItem> MANA_CIRCUIT_BOARD;
     public static ItemEntry<ComponentItem> UMLHPIC_WAFER;
     public static ItemEntry<ComponentItem> UMLHPIC_CHIP;
     public static ItemEntry<ComponentItem> MAGIC_QUANTUM_PROCESSOR_MAINFRAME;
+    public static ItemEntry<ComponentItem> ZENITH_STAR;
 
     public static ItemEntry<ComponentItem> MANA_ELECTRONIC_CIRCUIT = REGISTRATE
             .item("mana_electronic_circuit", ComponentItem::create)

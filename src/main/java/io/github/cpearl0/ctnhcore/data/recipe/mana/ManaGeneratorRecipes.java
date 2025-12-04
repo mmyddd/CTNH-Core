@@ -68,7 +68,7 @@ public class ManaGeneratorRecipes {
                 .inputItems(BotaniaItems.runeSummer)
                 .inputItems(BotaniaItems.runeWrath)
                 .inputItems(BotaniaItems.runeWrath)
-                .inputItems(CTNHItems.HORIZEN_RUNE)
+                .inputItems(CTNHManaItems.HORIZEN_RUNE)
                 .inputItems(CTNHBlocks.ALF_STEEL_CASING,4)
                 .inputFluids(CTNHMaterials.Cerrobase140,16000)
                 .inputFluids(CTNHMaterials.ManaStableCooldown,16000)

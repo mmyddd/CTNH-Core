@@ -16,6 +16,7 @@ import com.mojang.blaze3d.shaders.Effect;
 import com.teamresourceful.resourcefulconfig.web.annotations.Link;
 import io.github.cpearl0.ctnhcore.common.machine.multiblock.MachineUtils;
 import io.github.cpearl0.ctnhcore.registry.CTNHItems;
+import io.github.cpearl0.ctnhcore.registry.CTNHManaItems;
 import io.github.cpearl0.ctnhcore.registry.CTNHMaterials;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
@@ -215,23 +216,23 @@ public class EternalGarden extends WorkableElectricMultiblockMachine implements 
                     base_overclock+=0.0002;
                 }
             }
-            if(MachineUtils.canInputItem(new ItemStack(CTNHItems.TWIST_RUNE),mmachine))
+            if(MachineUtils.canInputItem(new ItemStack(CTNHManaItems.TWIST_RUNE),mmachine))
             {
                 base_overclock+=0.05;
             }
-            if(MachineUtils.canInputItem(new ItemStack(CTNHItems.HORIZEN_RUNE),mmachine))
+            if(MachineUtils.canInputItem(new ItemStack(CTNHManaItems.HORIZEN_RUNE),mmachine))
             {
                 base_overclock+=0.05;
             }
-            if(MachineUtils.canInputItem(new ItemStack(CTNHItems.PROLIFERATION_RUNE),mmachine))
+            if(MachineUtils.canInputItem(new ItemStack(CTNHManaItems.PROLIFERATION_RUNE),mmachine))
             {
                 base_overclock+=0.1;
             }
-            if(MachineUtils.canInputItem(new ItemStack(CTNHItems.STARLIGHT_RUNE),mmachine))
+            if(MachineUtils.canInputItem(new ItemStack(CTNHManaItems.STARLIGHT_RUNE),mmachine))
             {
                 base_overclock+=0.05;
             }
-            if(MachineUtils.canInputItem(new ItemStack(CTNHItems.QUASAR_RUNE),mmachine))
+            if(MachineUtils.canInputItem(new ItemStack(CTNHManaItems.QUASAR_RUNE),mmachine))
             {
                 base_overclock+=0.5;
             }
